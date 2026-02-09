@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes shrink-width {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.animate-shrink-width {
+  animation: shrink-width linear forwards;
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.3s ease-out forwards;
+}
+
+@keyframes toast-enter {
+  0% {
+    transform: translateX(calc(100% + 24px));
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toast-exit {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+    max-height: 200px;
+    margin-bottom: 8px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  50% {
+    transform: translateX(calc(100% + 24px));
+    opacity: 0;
+    max-height: 200px;
+    margin-bottom: 8px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  100% {
+    transform: translateX(calc(100% + 24px));
+    opacity: 0;
+    max-height: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@keyframes toast-progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.toast-enter {
+  animation: toast-enter 0.35s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
+}
+
+.toast-exit {
+  animation: toast-exit 0.35s cubic-bezier(0.06, 0.71, 0.55, 1) forwards;
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.2s ease-out forwards;
+}
+
+/* Leaflet Custom Styles */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px !important;
+  padding: 0 !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  border-radius: 12px !important;
+}
+
+.leaflet-popup-tip {
+  display: none !important;
+}
+
+.leaflet-popup-close-button {
+  top: 8px !important;
+  right: 8px !important;
+  width: 24px !important;
+  height: 24px !important;
+  font-size: 20px !important;
+  color: #64748b !important;
+  padding: 0 !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #334155 !important;
+}
+
+.custom-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.custom-marker:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+/* Scrollbar Styles for Popup */
+.leaflet-popup-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.leaflet-popup-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.leaflet-popup-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.leaflet-popup-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Ensure Leaflet map stays behind mobile sidebar */
+.leaflet-container {
+  z-index: 0 !important;
+}
+
+.leaflet-pane {
+  z-index: auto !important;
+}
+
+/* Ensure popups appear above markers and map */
+.leaflet-popup-pane {
+  z-index: 700 !important;
+}
+
+.leaflet-popup {
+  z-index: 700 !important;
+}
